@@ -3,6 +3,7 @@
 	"displayName": "Text Editor Show/Hide",
 	"description": "",
 	"version": "0.0.1",
+    "publisher": "jfaltermeier",
 	"engines": {
 		"vscode": "^1.67.0"
 	},
@@ -10,14 +11,30 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:text-editor-show-hide.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "text-editor-show-hide.helloWorld",
-				"title": "Hello World"
+				"command": "text-editor-show-hide.show",
+				"title": "Test show editor beside"
+			},
+			{
+				"command": "text-editor-show-hide.showOne",
+				"title": "Test show editor in column one"
+			},
+			{
+				"command": "text-editor-show-hide.showTwo",
+				"title": "Test show editor in column two"
+			},
+			{
+				"command": "text-editor-show-hide.showThree",
+				"title": "Test show editor in column three"
+			},
+			{
+				"command": "text-editor-show-hide.hide",
+				"title": "Test hide editor"
 			}
 		]
 	},
@@ -27,7 +44,7 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "yarn run compile && yarn run lint",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+		"package": "vsce package"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.67.0",
@@ -40,6 +57,7 @@
 		"glob": "^8.0.1",
 		"mocha": "^9.2.2",
 		"typescript": "^4.6.4",
+		"vsce": "^1.102.0",
 		"@vscode/test-electron": "^2.1.3"
 	}
 }
