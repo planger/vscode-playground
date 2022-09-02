@@ -2,7 +2,7 @@
   "name": "terminal-creation-options",
 	"displayName": "Terminal Creation Options",
 	"description": "",
-	"version": "0.0.5",
+	"version": "0.0.6",
     "publisher": "jfaltermeier",
 	"engines": {
 		"vscode": "^1.67.0"
@@ -17,16 +17,16 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "terminal-creation-options.createName",
-				"title": "Create terminal with name"
+				"command": "terminal-creation-options.createDefault",
+				"title": "Create default terminal"
 			},
 			{
-				"command": "terminal-creation-options.createTerminalOptions",
-				"title": "Create terminal with TerminalOptions"
+				"command": "terminal-creation-options.createHiddenTerminal",
+				"title": "Create hidden terminal"
 			},
 			{
-				"command": "terminal-creation-options.createExtensionTerminalOptions",
-				"title": "Create terminal with createExtensionTerminalOptions"
+				"command": "terminal-creation-options.showHiddenTerminal",
+				"title": "Show hidden terminal"
 			},
 			{
 				"command": "terminal-creation-options.print",
