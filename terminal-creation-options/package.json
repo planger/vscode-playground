@@ -2,7 +2,7 @@
   "name": "terminal-creation-options",
 	"displayName": "Terminal Creation Options",
 	"description": "",
-	"version": "0.0.6",
+	"version": "0.0.7",
     "publisher": "jfaltermeier",
 	"engines": {
 		"vscode": "^1.67.0"
@@ -21,12 +21,8 @@
 				"title": "Create default terminal"
 			},
 			{
-				"command": "terminal-creation-options.createHiddenTerminal",
-				"title": "Create hidden terminal"
-			},
-			{
-				"command": "terminal-creation-options.showHiddenTerminal",
-				"title": "Show hidden terminal"
+				"command": "terminal-creation-options.createStrictEnvTerminal",
+				"title": "Create strict env terminal"
 			},
 			{
 				"command": "terminal-creation-options.print",

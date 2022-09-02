@@ -1,31 +1,29 @@
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
-	let hiddenTerminal: vscode.Terminal;
-
 	context.subscriptions.push(
 		vscode.commands.registerCommand('terminal-creation-options.createDefault', () => {
-			const terminal = vscode.window.createTerminal("Default Terminal");
+			const terminal = vscode.window.createTerminal({
+				name: "Normal Env Terminal",
+				env: {
+					hello: "world"
+				}
+			});
 			terminal.sendText("echo " + JSON.stringify(terminal.creationOptions), true);
 		}));
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('terminal-creation-options.createHiddenTerminal', () => {
-			hiddenTerminal = vscode.window.createTerminal({
-				name: "Terminal 1 (hidden)",
-				hideFromUser: true,
+		vscode.commands.registerCommand('terminal-creation-options.createStrictEnvTerminal', () => {
+			const terminal = vscode.window.createTerminal({
+				name: "Strict Env Terminal",
+				strictEnv: true,
+				env: {
+					hello: "world"
+				}
 			});
-			hiddenTerminal.sendText("echo " + JSON.stringify(hiddenTerminal.creationOptions), true);
+			terminal.sendText("echo " + JSON.stringify(terminal.creationOptions), true);
 		}));
 
-	context.subscriptions.push(
-		vscode.commands.registerCommand('terminal-creation-options.showHiddenTerminal', () => {
-			if (hiddenTerminal === undefined) {
-				console.log('Hidden terminal has not been created yet');
-				return;
-			}
-			hiddenTerminal.show();
-		}));
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('terminal-creation-options.print', () => {
